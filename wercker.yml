@@ -1,0 +1,37 @@
+box:
+  id: golang
+  ports:
+    - "5000"
+    
+build:
+  steps: 
+    - wercker/golint
+    
+    - script:
+      name: go test
+      code: |
+        go test ./...
+        
+    - script:
+      name: go test
+      code: |
+        go build -o wercker-example main.go
+        
+dev:
+  steps:
+    - internal/watch:
+      code: |
+        go build -o wercker-example main.go
+        ./wercker-example
+      reload: true
+      
+push:
+  steps:
+    - internal/dicker-push:
+      ports: "5000"
+      username: $DOCKER_USERNAME
+      password: $DOCKER_PASSWORD
+      tag: latest
+      repository: $DOCKER_PASSWORD/wercker-example
+      registry: https://index.docker.io/v2
+      cmd: /pipeline/source/wercker-example

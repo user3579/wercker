@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/workspace/oracledeveloper-apac-wercker":{"guestpath":"/home/vagrant/workspace/oracledeveloper-apac-wercker","hostpath":"D:/gd/Projects/wercker/oracledeveloper-apac-wercker","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/gd/Projects/wercker/oracledeveloper-apac-wercker","disabled":false,"__vagrantfile":true}}}
